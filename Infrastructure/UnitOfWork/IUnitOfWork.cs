@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace Infrastructure.UnitOfWork
 {   public interface IUnitOfWork : IDisposable
     {
-        IGenericRepository<Product> ProductRepo { get; }
+        IProductRepository ProductRepo { get; }
         IGenericRepository<ProductCategory> ProductCategoryRepo { get; }
         Task<int> SaveChangesAsync();
     }
 }
 
-}
+

@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
 using Infrastructure.Data;
+using Infrastructure.Repositories.implementations;
 using Infrastructure.Repositories;
-
 
 namespace Infrastructure.UnitOfWork
 {
@@ -12,12 +12,12 @@ namespace Infrastructure.UnitOfWork
         public UnitOfWork(AppDbContext dbContext)
         {
             _dbContext = dbContext;
-            ProductRepo = new GenericRepository<Product>(_dbContext);
+            ProductRepo = new ProductRepository(_dbContext);
             ProductCategoryRepo = new GenericRepository<ProductCategory>(_dbContext);
         }
 
-        public IGenericRepository<Product> ProductRepo { get; private set; }
-        public IGenericRepository<ProductCategory> ProductCategoryRepo { get; private set }
+        public IProductRepository ProductRepo { get; private set; }
+        public IGenericRepository<ProductCategory> ProductCategoryRepo { get; private set; }
 
         public async Task<int> SaveChangesAsync()
             {

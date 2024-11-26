@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,8 +11,8 @@ namespace Infrastructure.Repositories
     {
         Task<IEnumerable<T>> GetAsync();
         Task<T> CreateAsync(T entity);
-        void UpdateAsync(T entity);
-        void DeleteAsync(T entity);
+        void Update(T entity);
+        void Delete(T entity);
 
     }
 }
