@@ -1,18 +1,14 @@
-﻿using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AppCore.DTOs;
+
 
 namespace AppCore.Interfaces
 {
-    internal interface IProductService
+    public interface IProductService
     {
-        Task<IEnumerable<Product>> ListProductsAsync();
-        Task<Product> GetProductByIdAsync(string id);
-        Task<Product> AddProductAsync(Product prod);
-        Task EditProductAsync(string id);
+        Task<IEnumerable<ProductDTO>> ListProductsAsync();
+        Task<ProductDTO> GetProductByIdAsync(string id);
+        Task AddProductAsync(CreateProductDTO prod);
+        Task EditProductAsync(CreateProductDTO prod);
         Task RemoveProductAsync(string id);
 
     }

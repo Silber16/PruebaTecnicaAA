@@ -1,20 +1,22 @@
-using Microsoft.AspNetCore.Mvc;
+using AppCore.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using AppCore.DTOs;
 
 namespace Web.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly IProductService _productService;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(IProductService productService)
         {
-            _logger = logger;
+            _productService = productService;
         }
 
-        public void OnGet()
-        {
 
+        public async Task OnGetAsync()
+        {
+            Products = _productService.ListProductsAsync();
         }
     }
 }

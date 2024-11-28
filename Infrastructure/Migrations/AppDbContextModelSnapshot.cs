@@ -28,10 +28,9 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<int>("CategoryProductId")
-                        .HasMaxLength(5)
                         .HasColumnType("int");
 
-                    b.Property<bool>("HAveECDiscount")
+                    b.Property<bool>("HaveECDiscount")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsActive")
@@ -46,7 +45,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("Stock")
-                        .HasMaxLength(5)
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
@@ -60,7 +58,6 @@ namespace Infrastructure.Migrations
                 {
                     b.Property<int>("CategoryProductId")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(5)
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryProductId"));

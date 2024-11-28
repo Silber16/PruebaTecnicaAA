@@ -7,7 +7,7 @@ namespace Domain.Entities
     public class ProductCategory
     {
         [Key]
-        [MaxLength(5)]
+        [Range(1,5)]
         public int CategoryProductId { get; set; }
 
         [MaxLength(200)]

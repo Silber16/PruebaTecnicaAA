@@ -1,4 +1,7 @@
-﻿using Infrastructure.Data;
+﻿using AppCore.Interfaces;
+using AppCore.Mappings;
+using AppCore.Services;
+using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Infrastructure.Repositories.implementations;
 using Infrastructure.UnitOfWork;
@@ -16,10 +19,17 @@ namespace AppCore
                  options => options.UseSqlServer(configuration.GetConnectionString("Principal"))
             );
 
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductCategoryService, ProductCategoryService>();
+
+            services.AddAutoMapper(typeof(MapperProfile));
 
             return services;
         }
     }
 }
+

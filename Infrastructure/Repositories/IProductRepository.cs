@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public interface IProductRepository : IGenericRepository<Product>
+    public interface IProductRepository
     {
-        Task<Product> GetByStringId(string id);
 
+        Task<IEnumerable<Product>> GetProductsAsync();
+        Task<Product> GetByStringId(string id);
+        Task CreateAsync(Product entity);
+        void Update(Product entity);
+        void Delete(Product entity);
     }
 }

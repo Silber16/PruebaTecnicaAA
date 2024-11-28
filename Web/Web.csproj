@@ -18,8 +18,4 @@
     <ProjectReference Include="..\AppCore\AppCore.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
