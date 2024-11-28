@@ -25,3 +25,4 @@ ejemplo migraciones:
 
 ## Correr proyecto
 Unicamente clonando el repositorio y ejecutandolo en Visual Studio (u otro IDE), el proyecto se ejecuta correctamente.
+- git clone https://github.com/Silber16/PruebaTecnicaAA
