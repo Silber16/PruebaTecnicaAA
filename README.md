@@ -6,7 +6,8 @@
 - Razor
 
 ## Arquitectura
-El proyecto sigue una arquitectura horizontal de capas (N-Tier/N-layers) con la siguiente estructura de proyectos:
+El proyecto sigue una arquitectura horizontal de capas (N-Tier/N-layers) asegurando la separación de responsabilidades, la facilidad de mantenimiento y el margen de escalabilidad. 
+Estructura de proyectos:
 - Domain: Entidades.
 - AppCore: capa de Lógica de negocio (Servicios, DTOs y perfiles mapper).
 - Infrastructure: Capa de acceso a datos (Repositorios, Unidad de trabajo, DbContext y migraciones.
