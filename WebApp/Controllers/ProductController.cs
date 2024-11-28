@@ -55,8 +55,19 @@ namespace WebApp.Controllers
             ViewData["Categories"] = new SelectList(categories, "CategoryProductId", "CategoryDescription");
 
             var prod = await _productService.GetProductByIdAsync(id);
+           
+            var createProductDTO = new CreateProductDTO
+            {
+                ProductId = prod.ProductId,
+                ProductDescription = prod.ProductDescription,
+                CategoryProductId = prod.CategoryProductId,
+                Stock = prod.Stock,
+                Price = prod.Price,
+                HaveECDiscount = prod.HaveECDiscount,
+                IsActive = prod.IsActive
+            };
 
-            return View(prod);
+            return View(createProductDTO);
         }
 
         [HttpPost]

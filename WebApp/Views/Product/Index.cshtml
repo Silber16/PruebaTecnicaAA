@@ -30,7 +30,7 @@
                 <td>@prod.HaveECDiscount</td>
                 <td>@prod.IsActive</td>
                 <td>
-                    <button asp-asp-controller="Product" asp-action="UpdateProduct" asp-route-id="@prod.ProductId".ProductId">Editar</button>
+                    <button onclick="editProduct('@prod.ProductId')" >Editar</button>
                     <button onclick="removeProduct('@prod.ProductId')">Eliminar</button>
                 </td>
             </tr>
@@ -40,6 +40,10 @@
 
 
 <script>
+
+    function editProduct(id) {
+    window.location.href = `/Product/UpdateProduct/${id}`;
+    }
 
     async function removeProduct(id) {
         if (confirm("¿Estás seguro de que quieres eliminar este producto?")) {
